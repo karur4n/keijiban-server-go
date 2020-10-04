@@ -5,7 +5,7 @@ import (
 )
 
 func FindAllThreads() ([]*Thread, error) {
-	db := NewDB()
+	db := newDB()
 
 	sql, _, err := sq.Select("id, title, created_at").From("threads").ToSql()
 	if err != nil {
